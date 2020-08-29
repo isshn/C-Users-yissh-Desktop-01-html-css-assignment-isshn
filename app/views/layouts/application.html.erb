@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <%= link_to 'logout',  destroy_user_session_path, method: :delete %>
+    <%= link_to "投稿ページ", posts_path%>
+    <%= link_to "暗証番号ページ", pins_path%>
+
     <%= yield %>
   </body>
 </html>
