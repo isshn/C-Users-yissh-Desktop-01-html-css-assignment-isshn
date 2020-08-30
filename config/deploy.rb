@@ -1,8 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-set :application, "test"
-set :repo_url, "git@github.com:isshn/test.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -37,6 +35,8 @@ set :repo_url, "git@github.com:isshn/test.git"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+set :application, "test"
+set :repo_url, "git@github.com:isshn/test.git"
 
 set :deploy_to, "/home/ec2-user/test"
 set :rbenv_ruby, '2.5.7'
