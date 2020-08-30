@@ -60,11 +60,16 @@
 #     # password: "please use keys"
 #   }
 
-server '54.250.48.222', user: 'ec2-user', roles: %w{app web db}
+# server '54.250.48.222', user: 'ec2-user', roles: %w{app web db}
 
-set :ssh_options, {
-  port: 80,
-  keys: [File.expand_path('~/.ssh/practice-aws.pem')],
-  forward_agent: true,
-  auth_methods: %w(publickey)
-}
+server '54.250.48.222',
+   user: 'ec2-user',
+   roles: %w{app web db},
+   ssh_options: {
+       port: 80,
+       user: 'ec2-user',
+       keys: %w(~/.ssh/practice-aws.pem),
+       forward_agent: true,
+       auth_methods: %w(publickey)
+   }
+
