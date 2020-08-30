@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :pins
   devise_for :users
   resources :posts
   root "posts#index"
