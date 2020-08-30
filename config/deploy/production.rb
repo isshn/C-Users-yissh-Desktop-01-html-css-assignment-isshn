@@ -61,3 +61,10 @@
 #   }
 
 server '54.250.48.222', user: 'ec2-user', roles: %w{app web db}
+
+set :ssh_options, {
+  port: 80,
+  keys: [File.expand_path('~/.ssh/id_rsa')],
+  forward_agent: true,
+  auth_methods: %w(publickey)
+}
